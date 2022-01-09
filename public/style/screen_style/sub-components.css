@@ -1,13 +1,18 @@
+#float-mobile-menu__container {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   #float-mobile-menu__container {
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
     background-color: #1a6dff;
     height: 100%;
     width: 80%;
     transition: width ease-in-out 0.5s;
     z-index: 99;
+    overflow: hidden;
   }
 
   #float-mobile-menu__container.close {
@@ -20,6 +25,8 @@
 
   #hamburger-button {
     position: absolute;
+    top: 0;
+    left: 0;
     cursor: pointer;
     width: 25px;
     height: 25px;

@@ -39,16 +39,36 @@
   margin: auto 0 auto auto;
 }
 
-.menu-items.desktop > .menu-item > a {
+.menu-items > .menu-item > a {
   font-size: 14px;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.menu-items > .menu-item > a:hover {
+  font-weight: bold;
+}
+
+.menu-items.desktop > .menu-item {
   margin-right: 15px;
 }
 
-.menu-items.desktop > .menu-item:last-child > a {
+.menu-items.desktop > .menu-item:last-child {
   margin-right: 0;
+}
+
+.menu-items.mobile {
+  flex-direction: column;
+  margin: 50px 20px auto auto;
+}
+
+.menu-items.mobile > .menu-item {
+  margin-bottom: 10px;
+}
+
+.menu-items.mobile > .menu-item:last-child {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 1024px) {
