@@ -1,0 +1,19 @@
+@media screen and (max-width: 768px) {
+  #float-mobile-menu__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1a6dff;
+    height: 100%;
+    width: 80%;
+    transition: width ease-in-out 0.5s;
+  }
+
+  #float-mobile-menu__container.close {
+    width: 0%;
+  }
+
+  #float-mobile-menu__container.open {
+    width: 80%;
+  }
+}

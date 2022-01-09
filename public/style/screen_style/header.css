@@ -1,0 +1,35 @@
+@import url(./sub-components.css);
+
+#header__container {
+  width: 100%;
+  background-color: #1a6dff;
+}
+
+#header__container > .header__navigation.desktop {
+  width: 1024px;
+  height: 70px;
+  margin: auto;
+}
+
+#header__container > .header__navigation.mobile {
+  display: none;
+  width: 100%;
+  height: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+  #header__container {
+    background-color: #fff;
+  }
+
+  #header__container > .header__navigation.desktop {
+    display: none;
+  }
+
+  #header__container > .header__navigation.mobile {
+    display: block;
+  }
+}
