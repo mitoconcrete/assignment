@@ -4,12 +4,14 @@
   position: relative;
   width: 100%;
   background-color: #1a6dff;
+  padding: 0 20px;
 }
 
 #header__container > .header__navigation.desktop {
-  width: 1024px;
+  max-width: 1024px;
   height: 70px;
   margin: auto;
+  display: flex;
 }
 
 #header__container > .header__navigation.desktop > .logo.desktop {
@@ -27,6 +29,26 @@
   width: 115px;
   height: 100%;
   margin: auto;
+}
+
+.menu-items {
+  display: flex;
+}
+
+.menu-items.desktop {
+  margin: auto 0 auto auto;
+}
+
+.menu-items.desktop > .menu-item > a {
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.menu-items.desktop > .menu-item:last-child > a {
+  margin-right: 0;
 }
 
 @media screen and (max-width: 1024px) {
