@@ -41,6 +41,6 @@
   }
 
   #header__container > .header__navigation.mobile {
-    display: block;
+    display: flex;
   }
 }
