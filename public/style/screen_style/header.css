@@ -1,6 +1,7 @@
 @import url(./sub-components.css);
 
 #header__container {
+  position: relative;
   width: 100%;
   background-color: #1a6dff;
 }
