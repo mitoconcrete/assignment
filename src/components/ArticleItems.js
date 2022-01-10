@@ -6,6 +6,8 @@ class ArticleItems {
       "main__item-container--article-items"
     );
     this.monoArticleWidth = 0;
+    this.rows = 1;
+    this.columns = 1;
     this.articles = articles;
   }
 
@@ -22,7 +24,7 @@ class ArticleItems {
 
   async _calcualates() {
     await this._calculateMonoArticleSize();
-    this._setArticleValues();
+    await this._setArticleValues();
   }
 
   _calculateMonoArticleSize() {
@@ -40,7 +42,7 @@ class ArticleItems {
     // decide article width.
     while (!isDecidedArticleWidth) {
       const calculatedTargetAreaWidth =
-        SCREEN_WIDTH - SIDE_PADDING * 2 + GAP_WIDTH;
+        SCREEN_WIDTH - SIDE_PADDING * 2 - GAP_WIDTH * (rowCnt - 1);
       /* below: debug console
       console.log(
         `${SCREEN_WIDTH} - ${SIDE_PADDING} * 2 = ${calculatedTargetAreaWidth}`
@@ -65,6 +67,8 @@ class ArticleItems {
         continue;
       }
     }
+    this.rows = rowCnt;
+    this.columns = parseInt(this.articles / rowCnt);
     this.monoArticleWidth = monoArticleWidth;
   }
 
@@ -77,6 +81,10 @@ class ArticleItems {
     if (!this.articles || !this.articles.length) {
       return;
     }
+
+    // DIFFRENCE POINT
+    this.elArticleContainer.style.gridTemplateColumns = `repeat(${this.rows}, ${this.monoArticleWidth}px)`;
+
     if (this.elArticleContainer.children.length) {
       for (let articleList of this.elArticleContainer.children) {
         articleList.style.width = this.monoArticleWidth + "px";

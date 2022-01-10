@@ -4,16 +4,16 @@
 }
 
 #main__item-container--article-items {
-  padding: 20px 10px 20px 20px;
+  padding: 20px;
   max-width: 1024px;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 20px 10px;
 }
 
 #main__item-container--article-items > .article-item {
-  padding-right: 10px;
-  margin-bottom: 20px;
+  /* padding-right: 10px;
+  margin-bottom: 20px; */
 }
 
 #main__item-container--article-items > .article-item > article {
@@ -72,6 +72,6 @@
 
 @media screen and (max-width: 1024px) {
   #main__item-container--article-items {
-    padding: 20px 10px 20px 20px;
+    padding: 20px;
   }
 }
