@@ -1,14 +1,16 @@
 class Navigation {
   constructor(navigationItems) {
-    this.navigationContainer = document.querySelectorAll(".menu-items");
-    this.mobileMenuButton = document.querySelector("#hamburger-button");
-    this.mobileMenu = document.querySelector("#float-mobile-menu__container");
+    this.elNavigationContainer = document.querySelectorAll(".menu-items");
+    this.elMobileMenuOpenButton = document.querySelector("#hamburger-button");
+    this.elMobileMenuContainer = document.querySelector(
+      "#float-mobile-menu__container"
+    );
     this.navigationItems = navigationItems;
   }
 
   init() {
     // 1. attach click event in mobile menu visible trigger button.
-    this.mobileMenuButton.addEventListener(
+    this.elMobileMenuOpenButton.addEventListener(
       "click",
       this._handleClickMobileButton.bind(this)
     );
@@ -23,27 +25,26 @@ class Navigation {
 
         const elAnchor = document.createElement("a");
         elAnchor.innerText = item.label;
-        elAnchor.href = item.href;
+        elAnchor.href = "#/" + item.href;
 
         elList.appendChild(elAnchor);
         menuElementsList.push(elList);
       }
 
       // append li < a tags into menulists.
-      for (let targetContainer of this.navigationContainer) {
+      for (let targetContainer of this.elNavigationContainer) {
         for (let element of menuElementsList) {
           // element deep clone.
           const cloneNode = element.cloneNode(true);
           targetContainer.appendChild(cloneNode);
         }
       }
-      menuElementsList = [];
     }
   }
 
   _handleClickMobileButton() {
-    this._handleToggleActions(this.mobileMenuButton);
-    this._handleToggleActions(this.mobileMenu);
+    this._handleToggleActions(this.elMobileMenuOpenButton);
+    this._handleToggleActions(this.elMobileMenuContainer);
   }
 
   _handleToggleActions(target) {
