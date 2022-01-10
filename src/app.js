@@ -16,3 +16,7 @@ navigation.init();
 
 const articleItems = new ArticleItems(articles);
 articleItems.init();
+
+console.log("welcome! this is 'all-same-height-flex' branch.");
+console.log("This branch use 'Flex' attribute.");
+console.log("Text Length effected all cards.");
