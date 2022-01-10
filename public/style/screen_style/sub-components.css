@@ -3,28 +3,29 @@
 }
 @media screen and (max-width: 768px) {
   #float-mobile-menu__container {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
     display: flex;
     background-color: #1a6dff;
     height: 100%;
+    transform: translateX(-100%);
     width: 80%;
-    transition: transform ease-in-out 0.5s;
     z-index: 99;
     overflow: hidden;
   }
 
   #float-mobile-menu__container.close {
     transform: translateX(-100%);
+    transition: transform ease-in-out 0.5s;
   }
 
   #float-mobile-menu__container.open {
     transform: translateX(0%);
+    transition: transform ease-in-out 0.5s;
   }
 
   #hamburger-button {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     cursor: pointer;
