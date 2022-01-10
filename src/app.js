@@ -1,5 +1,9 @@
 import Navigation from "./components/Navigation.js";
 import ArticleItems from "./components/ArticleItems.js";
+import { dummyArticleDataMaker } from "./common/dummy.js";
+
+const ARTICLE_COUNT = 7;
+const articles = dummyArticleDataMaker(ARTICLE_COUNT);
 
 const menus = [
   { href: "introduce", label: "제품소개" },
@@ -10,5 +14,5 @@ const menus = [
 const navigation = new Navigation(menus);
 navigation.init();
 
-const articleItems = new ArticleItems();
+const articleItems = new ArticleItems(articles);
 articleItems.init();

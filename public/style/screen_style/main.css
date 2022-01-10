@@ -19,6 +19,7 @@
 #main__item-container--article-items > .article-item > article {
   cursor: pointer;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -31,23 +32,25 @@
 #main__item-container--article-items
   > .article-item
   > article
-  > .articla-item--image-area {
+  > .article-item--image-area {
   width: 100%;
   height: 200px;
   background-color: #c4c4c4;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #main__item-container--article-items
   > .article-item
   > article
-  > .articla-item--text-area {
+  > .article-item--text-area {
   padding: 20px;
 }
 
 #main__item-container--article-items
   > .article-item
   > article
-  > .articla-item--text-area
+  > .article-item--text-area
   > h3 {
   font-size: 20px;
   line-height: normal;
@@ -59,7 +62,7 @@
 #main__item-container--article-items
   > .article-item
   > article
-  > .articla-item--text-area
+  > .article-item--text-area
   > p {
   font-size: 15px;
   line-height: normal;

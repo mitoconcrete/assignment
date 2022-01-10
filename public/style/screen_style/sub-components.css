@@ -10,17 +10,17 @@
     background-color: #1a6dff;
     height: 100%;
     width: 80%;
-    transition: width ease-in-out 0.5s;
+    transition: transform ease-in-out 0.5s;
     z-index: 99;
     overflow: hidden;
   }
 
   #float-mobile-menu__container.close {
-    width: 0%;
+    transform: translateX(-100%);
   }
 
   #float-mobile-menu__container.open {
-    width: 80%;
+    transform: translateX(0%);
   }
 
   #hamburger-button {
@@ -62,6 +62,18 @@
   }
   #hamburger-button.open > span:nth-child(3) {
     transform: rotate(-45deg);
+    transform-origin: bottom left;
+  }
+
+  #hamburger-button.close > span:nth-child(1) {
+    transform: rotate(0deg);
+    transform-origin: top left;
+  }
+  #hamburger-button.close > span:nth-child(2) {
+    width: 100%;
+  }
+  #hamburger-button.close > span:nth-child(3) {
+    transform: rotate(0deg);
     transform-origin: bottom left;
   }
 }

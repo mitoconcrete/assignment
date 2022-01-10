@@ -105,13 +105,13 @@ class ArticleItems {
     elArticleDescription.innerText = description;
 
     if (src) {
-      elArticleImageArea.style.backgroundImage = src;
+      elArticleImageArea.style.backgroundImage = `url(${src})`;
     }
-    elArticleImageArea.classList.add("articla-item--image-area");
+    elArticleImageArea.classList.add("article-item--image-area");
 
     elArticleTextArea.appendChild(elArticleTitle);
     elArticleTextArea.appendChild(elArticleDescription);
-    elArticleTextArea.classList.add("articla-item--text-area");
+    elArticleTextArea.classList.add("article-item--text-area");
 
     elArticle.appendChild(elArticleImageArea);
     elArticle.appendChild(elArticleTextArea);
