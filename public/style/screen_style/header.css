@@ -4,11 +4,11 @@
   position: relative;
   width: 100%;
   background-color: #1a6dff;
-  padding: 0 20px;
 }
 
 #header__container > .header__navigation.desktop {
   max-width: 1024px;
+  padding: 0 20px;
   height: 70px;
   margin: auto;
   display: flex;
