@@ -82,7 +82,7 @@ class ArticleItems {
       return;
     }
 
-    // DIFFRENCE POINT
+    // DIFFRENCE POINT : get column, width set into grid columns style.
     this.elArticleContainer.style.gridTemplateColumns = `repeat(${this.columns}, ${this.monoArticleWidth}px)`;
 
     if (this.elArticleContainer.children.length) {
