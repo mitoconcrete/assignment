@@ -68,7 +68,6 @@ class ArticleItems {
       }
     }
     this.columns = columnCnt;
-    this.columns = parseInt(this.articles / columnCnt);
     this.monoArticleWidth = monoArticleWidth;
   }
 
@@ -82,9 +81,6 @@ class ArticleItems {
       return;
     }
 
-    // DIFFRENCE POINT : get column, width set into grid columns style.
-    this.elArticleContainer.style.gridTemplateColumns = `repeat(${this.columns}, ${this.monoArticleWidth}px)`;
-
     if (this.elArticleContainer.children.length) {
       for (let articleList of this.elArticleContainer.children) {
         articleList.style.width = this.monoArticleWidth + "px";
@@ -95,6 +91,8 @@ class ArticleItems {
         this.elArticleContainer.appendChild(elArticle);
       }
     }
+    // DIFFRENCE POINT : get column, width set into grid columns style.
+    this.elArticleContainer.style.gridTemplateColumns = `repeat(${this.columns}, ${this.monoArticleWidth}px)`;
   }
 
   /*
