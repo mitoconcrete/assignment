@@ -47,7 +47,7 @@
 }
 
 .menu-items > .menu-item > a:hover {
-  font-weight: bold;
+  color: #000;
 }
 
 .menu-items.desktop > .menu-item {
