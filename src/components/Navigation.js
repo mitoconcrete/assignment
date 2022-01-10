@@ -48,12 +48,19 @@ class Navigation {
   }
 
   _handleToggleActions(target) {
+<<<<<<< HEAD
+=======
+    const elHtml = document.querySelector("html");
+>>>>>>> c474cabc0c44aae95ef168a374292588f66187be
     if (target.classList.contains("close") || !target.classList.length) {
       target.classList.remove("close");
       target.classList.add("open");
+      elHtml.style.overflow = "hidden";
+      elHtml.scrollTop = 0;
     } else {
       target.classList.remove("open");
       target.classList.add("close");
+      elHtml.style.overflow = "auto";
     }
   }
 }
