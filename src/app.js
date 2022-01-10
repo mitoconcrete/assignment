@@ -16,3 +16,7 @@ navigation.init();
 
 const articleItems = new ArticleItems(articles);
 articleItems.init();
+
+console.log("welcome! this is 'all-same-height-grid' branch.");
+console.log("This branch use 'Grid' attribute.");
+console.log("Text Length effected all cards.");
