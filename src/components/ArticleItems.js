@@ -79,6 +79,8 @@ class ArticleItems {
   helper 2. article 의 값을 셋팅하는 함수입니다.
   article list가 만들어져 있지 않다면, _makeArticle을 이용해 새로운 HTML배열을 만듭니다.
   article list가 만들어져 있다면, 새로할당 된 article 너비를 기존 리스트에 적용시킵니다.
+
+  +) DIFFRENCE POINT : 아티클의 최대 높이를 구해 그리드 스타일에 적용시킵니다.
   */
   _setArticleValues() {
     if (!this.articles || !this.articles.length) {
