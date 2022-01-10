@@ -16,3 +16,7 @@ navigation.init();
 
 const articleItems = new ArticleItems(articles);
 articleItems.init();
+
+console.log("Welcome! This is 'simple-flex' branch.");
+console.log("This branch use 'Flex' attribute.");
+console.log("Text Length effected only same line.");
