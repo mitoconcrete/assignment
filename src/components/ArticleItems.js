@@ -37,7 +37,7 @@ class ArticleItems {
 
     // variables for decide article width.
     let monoArticleWidth = 0;
-    let rowCnt = 1;
+    let columnCnt = 1;
     let isDecidedArticleWidth = false;
 
     // decide article width.
@@ -49,10 +49,10 @@ class ArticleItems {
         `${SCREEN_WIDTH} - ${SIDE_PADDING} * 2 = ${calculatedTargetAreaWidth}`
       );*/
 
-      const calculatedArticleWidth = calculatedTargetAreaWidth / rowCnt;
+      const calculatedArticleWidth = calculatedTargetAreaWidth / columnCnt;
       /*below: debug console
       console.log(
-        `${calculatedTargetAreaWidth} / ${rowCnt} = ${calculatedArticleWidth}`
+        `${calculatedTargetAreaWidth} / ${columnCnt} = ${calculatedArticleWidth}`
       );*/
 
       monoArticleWidth = calculatedArticleWidth;
@@ -64,7 +64,7 @@ class ArticleItems {
       }
       // 기준점을 아직 지나지 않았다면, 열을 하나 증가시켜 다음계산을 실시한다.
       else {
-        rowCnt++;
+        columnCnt++;
         continue;
       }
     }
