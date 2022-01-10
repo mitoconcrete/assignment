@@ -48,7 +48,7 @@ class Navigation {
   }
 
   _handleToggleActions(target) {
-    if (target.classList.contains("close")) {
+    if (target.classList.contains("close") || !target.classList.length) {
       target.classList.remove("close");
       target.classList.add("open");
     } else {
