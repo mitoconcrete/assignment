@@ -5,6 +5,8 @@ class ArticleItems {
     this.elArticleContainer = document.getElementById(
       "main__item-container--article-items"
     );
+    this.columns = 1;
+    this.rows = 1;
     this.monoArticleWidth = 0;
     this.articles = articles;
   }
@@ -65,7 +67,12 @@ class ArticleItems {
         continue;
       }
     }
+
     this.monoArticleWidth = monoArticleWidth;
+
+    // DIFFRENCE POINT : 컬럼 수, 로우 수를 구하여 저장.
+    this.columns = columnCnt;
+    this.rows = parseInt(this.articles.length / columnCnt);
   }
 
   /*
@@ -77,6 +84,7 @@ class ArticleItems {
     if (!this.articles || !this.articles.length) {
       return;
     }
+
     if (this.elArticleContainer.children.length) {
       for (let articleList of this.elArticleContainer.children) {
         articleList.style.width = this.monoArticleWidth + "px";
@@ -87,6 +95,11 @@ class ArticleItems {
         this.elArticleContainer.appendChild(elArticle);
       }
     }
+
+    const maxHeight = this._getMaximunHeight();
+
+    this.elArticleContainer.style.gridTemplateColumns = `repeat(${this.columns} , ${this.monoArticleWidth}px)`;
+    this.elArticleContainer.style.gridTemplateRows = `repeat(${this.rows} , ${maxHeight}px)`;
   }
 
   /*
@@ -121,6 +134,13 @@ class ArticleItems {
     elList.appendChild(elArticle);
 
     return elList;
+  }
+
+  _getMaximunHeight() {
+    const heights = Array.from(this.elArticleContainer.children).map(
+      (el) => el.offsetHeight
+    );
+    return Math.max.apply(this, heights);
   }
 }
 
