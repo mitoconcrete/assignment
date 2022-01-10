@@ -4,8 +4,9 @@
 }
 
 #main__item-container--article-items {
-  width: 100%;
-  padding: 20px;
+  padding: 20px 0;
+  max-width: 1024px;
+  margin: auto;
 }
 
 #main__item-container--article-items > .article-item > article {
@@ -55,4 +56,10 @@
   font-size: 15px;
   line-height: normal;
   letter-spacing: 0.1px;
+}
+
+@media screen and (max-width: 1024px) {
+  #main__item-container--article-items {
+    padding: 20px;
+  }
 }
