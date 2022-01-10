@@ -97,8 +97,11 @@ class ArticleItems {
         this.elArticleContainer.appendChild(elArticle);
       }
     }
-
     const maxHeight = this._getMaximunHeight();
+
+    for (let articleList of this.elArticleContainer.children) {
+      articleList.style.height = maxHeight + "px";
+    }
 
     this.elArticleContainer.style.gridTemplateColumns = `repeat(${this.columns} , ${this.monoArticleWidth}px)`;
     this.elArticleContainer.style.gridTemplateRows = `repeat(${this.rows} , ${maxHeight}px)`;
