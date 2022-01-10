@@ -1,21 +1,8 @@
-# Intro
+# Branch name
 
-This project for technical-assignment.
+all-same-height-flex
 
-# Project duration
+# Branch Description
 
-2022.1.9 23:00 ~ 2022.1.11 10:00
-
-# Explain branches
-
-- master
-
-```
-~~
-```
-
-- feature/~
-
-```
-~~
-```
+**모든 줄**의 카드(흰색 배경) 높이가 포함된 텍스트의 길이에 관계 없이 동일한 높이를 유지하는 branch 입니다.  
+**Flex 속성**을 사용하여 구현하였습니다.
