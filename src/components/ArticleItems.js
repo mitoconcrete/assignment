@@ -6,6 +6,7 @@ class ArticleItems {
       "main__item-container--article-items"
     );
     this.monoArticleWidth = 0;
+    this.monoArticleHeight = 0;
     this.articles = articles;
   }
 
@@ -22,7 +23,9 @@ class ArticleItems {
 
   async _calcualates() {
     await this._calculateMonoArticleSize();
-    this._setArticleValues();
+    await this._setArticleWidth();
+    await this._getMaximumHeight();
+    await this._setArticleHeight();
   }
 
   _calculateMonoArticleSize() {
@@ -69,11 +72,11 @@ class ArticleItems {
   }
 
   /*
-  helper 2. article 의 값을 셋팅하는 함수입니다.
+  helper 2. article 의 너비 값을 셋팅하는 함수입니다.
   article list가 만들어져 있지 않다면, _makeArticle을 이용해 새로운 HTML배열을 만듭니다.
   article list가 만들어져 있다면, 새로할당 된 article 너비를 기존 리스트에 적용시킵니다.
   */
-  _setArticleValues() {
+  _setArticleWidth() {
     if (!this.articles || !this.articles.length) {
       return;
     }
@@ -85,6 +88,18 @@ class ArticleItems {
       for (let article of this.articles) {
         const elArticle = this._makeArticle(article);
         this.elArticleContainer.appendChild(elArticle);
+      }
+    }
+  }
+
+  /*
+  helper 3. article 의 높이 값을 셋팅하는 함수입니다.
+  최대 아티클의 높이에 맞추어 모든 아티클의 높이를 통일화 시킵니다.
+  */
+  _setArticleHeight() {
+    if (this.elArticleContainer.children.length) {
+      for (let articleList of this.elArticleContainer.children) {
+        articleList.style.height = this.monoArticleHeight + "px";
       }
     }
   }
@@ -121,6 +136,14 @@ class ArticleItems {
     elList.appendChild(elArticle);
 
     return elList;
+  }
+
+  _getMaximumHeight() {
+    const heights = Array.from(this.elArticleContainer.children).map(
+      (el) => el.offsetHeight
+    );
+    this.monoArticleHeight = Math.max.apply(this, heights);
+    return;
   }
 }
 
