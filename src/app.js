@@ -16,3 +16,7 @@ navigation.init();
 
 const articleItems = new ArticleItems(articles);
 articleItems.init();
+
+console.log("welcome! this is 'simple-grid' branch.");
+console.log("This branch use 'Grid' attribute.");
+console.log("Text Length effected only same line.");
