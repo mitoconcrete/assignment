@@ -48,12 +48,16 @@ class Navigation {
   }
 
   _handleToggleActions(target) {
+    const elHtml = document.querySelector("html");
     if (target.classList.contains("close") || !target.classList.length) {
       target.classList.remove("close");
       target.classList.add("open");
+      elHtml.style.overflow = "hidden";
+      elHtml.scrollTop = 0;
     } else {
       target.classList.remove("open");
       target.classList.add("close");
+      elHtml.style.overflow = "auto";
     }
   }
 }
