@@ -42,7 +42,7 @@ class ArticleItems {
     // decide article width.
     while (!isDecidedArticleWidth) {
       const calculatedTargetAreaWidth =
-        SCREEN_WIDTH - SIDE_PADDING * 2 + GAP_WIDTH;
+        SCREEN_WIDTH - SIDE_PADDING * 2 - GAP_WIDTH * (columnCnt - 1);
       /* below: debug console
       console.log(
         `${SCREEN_WIDTH} - ${SIDE_PADDING} * 2 = ${calculatedTargetAreaWidth}`
