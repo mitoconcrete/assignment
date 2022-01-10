@@ -2,3 +2,57 @@
   flex: 1;
   background-color: #f6f6f8;
 }
+
+#main__item-container--article-items {
+  width: 100%;
+  padding: 20px;
+}
+
+#main__item-container--article-items > .article-item > article {
+  cursor: pointer;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+#main__item-container--article-items > .article-item > article:hover {
+  transform: scale(1.01);
+}
+
+#main__item-container--article-items
+  > .article-item
+  > article
+  > .articla-item--image-area {
+  width: 100%;
+  height: 200px;
+  background-color: #c4c4c4;
+}
+
+#main__item-container--article-items
+  > .article-item
+  > article
+  > .articla-item--text-area {
+  padding: 20px;
+}
+
+#main__item-container--article-items
+  > .article-item
+  > article
+  > .articla-item--text-area
+  > h3 {
+  font-size: 20px;
+  line-height: normal;
+  letter-spacing: 0.1px;
+  margin-bottom: 10px;
+}
+
+#main__item-container--article-items
+  > .article-item
+  > article
+  > .articla-item--text-area
+  > p {
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: 0.1px;
+}
