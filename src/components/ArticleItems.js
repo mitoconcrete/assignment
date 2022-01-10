@@ -36,22 +36,22 @@ class ArticleItems {
 
     // variables for decide article width.
     let monoArticleWidth = 0;
-    let rowCnt = 1;
+    let columnCnt = 1;
     let isDecidedArticleWidth = false;
 
     // decide article width.
     while (!isDecidedArticleWidth) {
       const calculatedTargetAreaWidth =
-        SCREEN_WIDTH - SIDE_PADDING * 2 - GAP_WIDTH * (rowCnt - 1);
+        SCREEN_WIDTH - SIDE_PADDING * 2 - GAP_WIDTH * (columnCnt - 1);
       /* below: debug console
       console.log(
         `${SCREEN_WIDTH} - ${SIDE_PADDING} * 2 = ${calculatedTargetAreaWidth}`
       );*/
 
-      const calculatedArticleWidth = calculatedTargetAreaWidth / rowCnt;
+      const calculatedArticleWidth = calculatedTargetAreaWidth / columnCnt;
       /*below: debug console
       console.log(
-        `${calculatedTargetAreaWidth} / ${rowCnt} = ${calculatedArticleWidth}`
+        `${calculatedTargetAreaWidth} / ${columnCnt} = ${calculatedArticleWidth}`
       );*/
 
       monoArticleWidth = calculatedArticleWidth;
@@ -63,12 +63,12 @@ class ArticleItems {
       }
       // 기준점을 아직 지나지 않았다면, 열을 하나 증가시켜 다음계산을 실시한다.
       else {
-        rowCnt++;
+        columnCnt++;
         continue;
       }
     }
-    this.rows = rowCnt;
-    this.columns = parseInt(this.articles / rowCnt);
+    this.columns = columnCnt;
+    this.columns = parseInt(this.articles / columnCnt);
     this.monoArticleWidth = monoArticleWidth;
   }
 
@@ -83,7 +83,7 @@ class ArticleItems {
     }
 
     // DIFFRENCE POINT
-    this.elArticleContainer.style.gridTemplateColumns = `repeat(${this.rows}, ${this.monoArticleWidth}px)`;
+    this.elArticleContainer.style.gridTemplateColumns = `repeat(${this.columns}, ${this.monoArticleWidth}px)`;
 
     if (this.elArticleContainer.children.length) {
       for (let articleList of this.elArticleContainer.children) {
